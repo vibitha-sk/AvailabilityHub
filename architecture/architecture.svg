@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" width="1100" height="640"
+     style="font-family:'Segoe UI',Inter,Arial,sans-serif; background:#fff">
+
+  <defs>
+    <!-- ── Animations ── -->
+    <style>
+      .a1 { stroke-dasharray:9 5; animation:flow 1.6s linear infinite }
+      .a2 { stroke-dasharray:9 5; animation:flow 2.2s linear infinite }
+      .a3 { stroke-dasharray:9 5; animation:flow 1.2s linear infinite }
+      .a4 { stroke-dasharray:9 5; animation:flow 2.8s linear infinite }
+      @keyframes flow { to { stroke-dashoffset:-28 } }
+    </style>
+
+    <!-- ── Arrowheads ── -->
+    <marker id="mB" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#0078d4"/>
+    </marker>
+    <marker id="mP" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#6b21a8"/>
+    </marker>
+    <marker id="mG" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#15803d"/>
+    </marker>
+    <marker id="mO" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#c2410c"/>
+    </marker>
+
+    <!-- ── Card shadow ── -->
+    <filter id="cs" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BACKGROUND — very light blue-white                        -->
+  <rect width="1100" height="640" fill="#f5f8fc"/>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       HEADER                                                     -->
+  <rect x="0" y="0" width="1100" height="50" fill="#0078d4"/>
+  <!-- Azure logo (triangle A) -->
+  <polygon points="20,40 31,14 42,40" fill="none" stroke="white" stroke-width="2"/>
+  <line x1="24" y1="34" x2="38" y2="34" stroke="white" stroke-width="2"/>
+  <text x="54" y="32" fill="white" font-size="15" font-weight="700" letter-spacing=".3">
+    Product Availability Tracker — Azure Architecture
+  </text>
+  <text x="1086" y="32" fill="#bbddf7" font-size="10" text-anchor="end">High-Level · Serverless</text>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       AZURE SUBSCRIPTION frame                                   -->
+  <rect x="124" y="62" width="952" height="546" rx="9"
+        fill="#eef6fd" stroke="#6d9cce" stroke-width="1.5" stroke-dasharray="10 5"/>
+  <!-- key icon -->
+  <circle cx="139" cy="73" r="5" fill="none" stroke="#f0a500" stroke-width="1.6"/>
+  <rect x="143" y="71" width="9" height="4.5" rx="1" fill="none" stroke="#f0a500" stroke-width="1.5"/>
+  <line x1="148" y1="75.5" x2="148" y2="79" stroke="#f0a500" stroke-width="1.5"/>
+  <text x="157" y="78" fill="#0078d4" font-size="10.5" font-weight="600">Azure Subscription</text>
+
+  <!-- Resource Group frame -->
+  <rect x="142" y="90" width="916" height="508" rx="7"
+        fill="rgba(255,255,255,.72)" stroke="#0078d4" stroke-width="1.2"/>
+  <!-- RG icon (stacked rectangles) -->
+  <rect x="156" y="98"  width="11" height="9" rx="1.5" fill="none" stroke="#0078d4" stroke-width="1.2"/>
+  <rect x="160" y="103" width="11" height="9" rx="1.5" fill="#dbeafe" stroke="#0078d4" stroke-width="1.2"/>
+  <text x="177" y="109" fill="#0078d4" font-size="10.5" font-weight="600">rg-product-tracker</text>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       USER (outside subscription — left)                        -->
+  <g filter="url(#cs)">
+    <rect x="12" y="240" width="104" height="160" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.8"/>
+    <!-- person icon -->
+    <circle cx="64" cy="278" r="19" fill="#1d4ed8"/>
+    <circle cx="64" cy="272" r="9.5"  fill="white"/>
+    <path   d="M46,296 C46,284 82,284 82,296" fill="white"/>
+    <text x="64" y="320" fill="#1e3a8a" font-size="11" font-weight="700" text-anchor="middle">End User</text>
+    <text x="64" y="337" fill="#374151" font-size="9"  text-anchor="middle">Web Browser</text>
+    <text x="64" y="353" fill="#374151" font-size="9"  text-anchor="middle">+ Email Inbox</text>
+    <rect x="20" y="362" width="88" height="16" rx="8" fill="#1d4ed8"/>
+    <text x="64" y="374" fill="white"   font-size="8.5" font-weight="600" text-anchor="middle">Outside Azure</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CARD 1 — AZURE ENTRA ID                                   -->
+  <g filter="url(#cs)">
+    <rect x="160" y="118" width="192" height="152" rx="9"
+          fill="white" stroke="#7c3aed" stroke-width="1.6"/>
+    <!-- left accent bar -->
+    <rect x="160" y="118" width="5" height="152" rx="2.5" fill="#7c3aed"/>
+
+    <!-- Entra icon: shield + person (official shape) -->
+    <g transform="translate(256 162)">
+      <!-- shield outline -->
+      <path d="M0,-24 L20,-17 L20,-4 C20,9 0,18 0,18 C0,18 -20,9 -20,-4 L-20,-17 Z"
+            fill="#7c3aed" opacity=".15" stroke="#7c3aed" stroke-width="1.8"/>
+      <!-- person head -->
+      <circle cx="0" cy="-9" r="6.5" fill="#7c3aed"/>
+      <!-- person shoulders -->
+      <path d="M-11,7 C-11,-2 11,-2 11,7" fill="#7c3aed"/>
+    </g>
+
+    <text x="256" y="200" fill="#4c1d95" font-size="12" font-weight="700" text-anchor="middle">Azure Entra ID</text>
+    <text x="256" y="217" fill="#6b21a8" font-size="9.5" text-anchor="middle">OAuth 2.0 · PKCE</text>
+    <text x="256" y="232" fill="#6b21a8" font-size="9.5" text-anchor="middle">JWT Token Auth</text>
+    <rect x="204" y="244" width="104" height="17" rx="8.5" fill="#7c3aed"/>
+    <text x="256" y="256" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">Tenant Level · SSO</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CARD 2 — AZURE STATIC WEB APP                            -->
+  <g filter="url(#cs)">
+    <rect x="160" y="294" width="192" height="172" rx="9"
+          fill="white" stroke="#1d4ed8" stroke-width="1.6"/>
+    <rect x="160" y="294" width="5" height="172" rx="2.5" fill="#1d4ed8"/>
+
+    <!-- SWA icon: globe + lightning (official style) -->
+    <g transform="translate(256 342)">
+      <circle cx="0" cy="0" r="22" fill="#0078d4" opacity=".1" stroke="#0078d4" stroke-width="1.8"/>
+      <!-- equator -->
+      <line x1="-22" y1="0" x2="22" y2="0" stroke="#0078d4" stroke-width="1.3" opacity=".7"/>
+      <!-- meridians -->
+      <path d="M0,-22 C-10,-12 -10,12 0,22" fill="none" stroke="#0078d4" stroke-width="1.3" opacity=".65"/>
+      <path d="M0,-22 C 10,-12  10,12 0,22" fill="none" stroke="#0078d4" stroke-width="1.3" opacity=".65"/>
+      <!-- lightning bolt -->
+      <polygon points="3,-14 -3,1 1,1 -3,14 9,-1 5,-1 11,-14" fill="#0078d4"/>
+    </g>
+
+    <text x="256" y="380" fill="#1e3a8a" font-size="12" font-weight="700" text-anchor="middle">Static Web App</text>
+    <text x="256" y="397" fill="#1d4ed8" font-size="9.5" text-anchor="middle">swa-product-tracker</text>
+    <text x="256" y="413" fill="#6b7280" font-size="9"   text-anchor="middle">React 18 · MSAL Browser</text>
+    <rect x="200" y="424" width="112" height="17" rx="8.5" fill="#1d4ed8"/>
+    <text x="256" y="436" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">Free Plan · East US 2</text>
+    <text x="256" y="456" fill="#9ca3af" font-size="8.5" text-anchor="middle">azurestaticapps.net</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CARD 3 — AZURE FUNCTIONS (center)                        -->
+  <g filter="url(#cs)">
+    <rect x="388" y="190" width="230" height="268" rx="9"
+          fill="white" stroke="#15803d" stroke-width="1.6"/>
+    <rect x="388" y="190" width="5" height="268" rx="2.5" fill="#15803d"/>
+
+    <!-- Function icon: dark bg + yellow bolt (official) -->
+    <g transform="translate(501 256)">
+      <rect x="-28" y="-28" width="56" height="56" rx="8" fill="#1a1a2e"/>
+      <polygon points="3,-18 -4,-1 1,-1 -5,18 11,-2 6,-2 13,-18" fill="#ffd700"/>
+    </g>
+
+    <text x="503" y="307" fill="#14532d" font-size="12"  font-weight="700" text-anchor="middle">Azure Functions</text>
+    <text x="503" y="323" fill="#15803d" font-size="9.5" text-anchor="middle">func-product-tracker</text>
+    <text x="503" y="339" fill="#6b7280" font-size="9"   text-anchor="middle">Python 3.11 · Consumption</text>
+
+    <!-- divider -->
+    <line x1="406" y1="350" x2="610" y2="350" stroke="#f3f4f6" stroke-width="1"/>
+    <text x="503" y="364" fill="#374151" font-size="8.5" text-anchor="middle">① products_api (HTTP Trigger)</text>
+    <text x="503" y="378" fill="#374151" font-size="8.5" text-anchor="middle">② availability_checker (Timer 60s)</text>
+
+    <rect x="425" y="390" width="156" height="17" rx="8.5" fill="#15803d"/>
+    <text x="503" y="402" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">Serverless · Canada Central</text>
+
+    <text x="503" y="422" fill="#9ca3af" font-size="8.5" text-anchor="middle">BeautifulSoup4 · requests</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CARD 4 — AZURE COSMOS DB                                  -->
+  <g filter="url(#cs)">
+    <rect x="662" y="118" width="210" height="178" rx="9"
+          fill="white" stroke="#1e40af" stroke-width="1.6"/>
+    <rect x="662" y="118" width="5" height="178" rx="2.5" fill="#1e40af"/>
+
+    <!-- Cosmos icon: 3 orbital rings + center dot (official) -->
+    <g transform="translate(767 180)">
+      <ellipse rx="22" ry="8" fill="none" stroke="#0078d4" stroke-width="1.9" transform="rotate(0)"/>
+      <ellipse rx="22" ry="8" fill="none" stroke="#0078d4" stroke-width="1.9" transform="rotate(60)"/>
+      <ellipse rx="22" ry="8" fill="none" stroke="#0078d4" stroke-width="1.9" transform="rotate(-60)"/>
+      <circle r="5.5" fill="#0078d4"/>
+      <circle r="2.5" fill="white"/>
+    </g>
+
+    <text x="767" y="218" fill="#1e3a8a" font-size="12" font-weight="700" text-anchor="middle">Azure Cosmos DB</text>
+    <text x="767" y="234" fill="#1d4ed8" font-size="9.5" text-anchor="middle">cosmos-product-tracker</text>
+    <text x="767" y="250" fill="#6b7280" font-size="9"   text-anchor="middle">NoSQL API · Serverless</text>
+    <rect x="711" y="260" width="112" height="17" rx="8.5" fill="#1e40af"/>
+    <text x="767" y="272" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">Partition: /user_id</text>
+    <text x="767" y="290" fill="#9ca3af" font-size="8.5" text-anchor="middle">Canada Central</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CARD 5 — COMMUNICATION SERVICES                           -->
+  <g filter="url(#cs)">
+    <rect x="662" y="332" width="210" height="176" rx="9"
+          fill="white" stroke="#1e40af" stroke-width="1.6"/>
+    <rect x="662" y="332" width="5" height="176" rx="2.5" fill="#1e40af"/>
+
+    <!-- ACS icon: envelope (official) -->
+    <g transform="translate(767 392)">
+      <rect x="-26" y="-20" width="52" height="36" rx="4"
+            fill="#0078d4" opacity=".12" stroke="#0078d4" stroke-width="1.9"/>
+      <polyline points="-26,-18 0,-3 26,-18" fill="none" stroke="#0078d4" stroke-width="1.9"/>
+    </g>
+
+    <text x="767" y="428" fill="#1e3a8a" font-size="12" font-weight="700" text-anchor="middle">Communication</text>
+    <text x="767" y="444" fill="#1e3a8a" font-size="12" font-weight="700" text-anchor="middle">Services</text>
+    <text x="767" y="461" fill="#6b7280" font-size="9"   text-anchor="middle">Email Notifications</text>
+    <rect x="703" y="471" width="128" height="17" rx="8.5" fill="#1e40af"/>
+    <text x="767" y="483" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">azurecomm.net · PAYG</text>
+    <text x="767" y="501" fill="#9ca3af" font-size="8.5" text-anchor="middle">acs-product-tracker</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       EXTERNAL PRODUCT WEBSITES (inside sub, styled external)  -->
+  <g filter="url(#cs)">
+    <rect x="912" y="196" width="136" height="170" rx="9"
+          fill="#f8fafc" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="6 3"/>
+
+    <!-- Internet/globe icon -->
+    <g transform="translate(980 256)">
+      <circle r="22" fill="none" stroke="#64748b" stroke-width="1.8"/>
+      <ellipse rx="9" ry="22" fill="none" stroke="#64748b" stroke-width="1.3" opacity=".7"/>
+      <line x1="-22" y1="0" x2="22" y2="0" stroke="#64748b" stroke-width="1.3" opacity=".7"/>
+      <line x1="-18" y1="-12" x2="18" y2="-12" stroke="#64748b" stroke-width="1" opacity=".5"/>
+      <line x1="-18" y1=" 12" x2="18" y2=" 12" stroke="#64748b" stroke-width="1" opacity=".5"/>
+    </g>
+
+    <text x="980" y="294" fill="#334155" font-size="11" font-weight="700" text-anchor="middle">Product Sites</text>
+    <text x="980" y="311" fill="#64748b" font-size="9"  text-anchor="middle">Nike · Adidas</text>
+    <text x="980" y="326" fill="#64748b" font-size="9"  text-anchor="middle">Zara · H&amp;M + more</text>
+    <rect x="932" y="338" width="96" height="17" rx="8.5" fill="#94a3b8"/>
+    <text x="980" y="350" fill="white" font-size="8.5" font-weight="600" text-anchor="middle">External / Internet</text>
+    <text x="980" y="360" fill="#9ca3af" font-size="8"  text-anchor="middle">Public URLs</text>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FLOW ARROWS  (all animated)
+
+   Layout reference (card edges):
+     User right            x=116, y≈320
+     Entra card            x=160–352, y=118–270  center=(256,194)
+     SWA card              x=160–352, y=294–466  center=(256,380)
+     FuncApp card          x=388–618, y=190–458  center=(503,324)
+     Cosmos card           x=662–872, y=118–296  center=(767,207)
+     ACS card              x=662–872, y=332–508  center=(767,420)
+     External card         x=912–1048,y=196–366  center=(980,281)
+                                                              -->
+
+  <!-- ① User → SWA  (HTTPS, user opens app) -->
+  <path d="M116,330 L160,360" fill="none" stroke="#0078d4" stroke-width="2.5"
+        class="a1" marker-end="url(#mB)"/>
+  <rect x="98" y="302" width="62" height="20" rx="10" fill="white" stroke="#0078d4" stroke-width="1"/>
+  <text x="129" y="316" fill="#0078d4" font-size="9" font-weight="700" text-anchor="middle">① HTTPS</text>
+
+
+  <!-- ② SWA → Entra ID  (Login redirect)  — going UP on left side -->
+  <path d="M244,294 L244,270" fill="none" stroke="#6b21a8" stroke-width="2.2"
+        class="a2" marker-end="url(#mP)"/>
+
+  <!-- ③ Entra → SWA  (JWT token back)  — going DOWN on right side, dashed -->
+  <path d="M268,270 L268,294" fill="none" stroke="#6b21a8" stroke-width="2.2"
+        stroke-dasharray="5 3" class="a2" marker-end="url(#mP)" opacity=".75"/>
+
+  <!-- combined label -->
+  <rect x="284" y="270" width="80" height="36" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="324" y="283" fill="#6b21a8" font-size="8.5" font-weight="700" text-anchor="middle">② Login</text>
+  <text x="324" y="298" fill="#6b21a8" font-size="8.5" font-weight="600" text-anchor="middle">③ JWT Token</text>
+
+
+  <!-- ④ SWA → Azure Functions  (API call) -->
+  <path d="M352,360 L388,324" fill="none" stroke="#0078d4" stroke-width="2.5"
+        class="a1" marker-end="url(#mB)"/>
+  <rect x="344" y="316" width="62" height="20" rx="10" fill="white" stroke="#0078d4" stroke-width="1"/>
+  <text x="375" y="330" fill="#0078d4" font-size="9" font-weight="700" text-anchor="middle">④ REST API</text>
+
+
+  <!-- ⑤ Azure Functions → Cosmos DB  (store / read products) -->
+  <path d="M618,288 L662,222" fill="none" stroke="#0078d4" stroke-width="2.5"
+        class="a1" marker-end="url(#mB)"/>
+  <rect x="614" y="234" width="72" height="20" rx="10" fill="white" stroke="#0078d4" stroke-width="1"/>
+  <text x="650" y="248" fill="#0078d4" font-size="9" font-weight="700" text-anchor="middle">⑤ Read/Write</text>
+
+
+  <!-- ⑥ Azure Functions → External  (timer scrapes product page)
+         Route: exits FuncApp right at y≈296, goes THROUGH the gap between
+         Cosmos (bottom=296) and ACS (top=332) horizontally to External.    -->
+  <path d="M618,320 L912,290" fill="none" stroke="#15803d" stroke-width="2.5"
+        class="a3" marker-end="url(#mG)"/>
+  <!-- gap check: at x=662 y≈316 (gap=296–332✓), at x=870 y≈292 (gap✓) -->
+  <rect x="736" y="280" width="66" height="20" rx="10" fill="white" stroke="#15803d" stroke-width="1"/>
+  <text x="769" y="294" fill="#15803d" font-size="9" font-weight="700" text-anchor="middle">⑥ Scrape</text>
+
+
+  <!-- ⑦ Azure Functions → ACS  (send email notification) -->
+  <path d="M503,458 L503,498 L662,430" fill="none" stroke="#15803d" stroke-width="2.5"
+        class="a3" marker-end="url(#mG)"/>
+  <rect x="538" y="486" width="78" height="20" rx="10" fill="white" stroke="#15803d" stroke-width="1"/>
+  <text x="577" y="500" fill="#15803d" font-size="9" font-weight="700" text-anchor="middle">⑦ Trigger Email</text>
+
+
+  <!-- ⑧ ACS → User  (email arrives in inbox) — routes BELOW all cards -->
+  <path d="M767,508 L767,576 L64,576 L64,400" fill="none" stroke="#c2410c" stroke-width="2.2"
+        stroke-dasharray="9 5" class="a4" marker-end="url(#mO)"/>
+  <rect x="366" y="564" width="116" height="20" rx="10" fill="white" stroke="#c2410c" stroke-width="1"/>
+  <text x="424" y="578" fill="#c2410c" font-size="9" font-weight="700" text-anchor="middle">⑧ Email — Size Available!</text>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FLOW NUMBERS LEGEND (bottom strip)                        -->
+  <rect x="142" y="598" width="916" height="32" rx="6"
+        fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Blue -->
+  <line x1="162" y1="614" x2="188" y2="614" stroke="#0078d4" stroke-width="2.5" stroke-dasharray="9 5"/>
+  <polygon points="188,610 188,618 196,614" fill="#0078d4"/>
+  <text x="202" y="618" fill="#374151" font-size="9">User / API / Data flow</text>
+
+  <!-- Purple -->
+  <line x1="330" y1="614" x2="356" y2="614" stroke="#6b21a8" stroke-width="2.2" stroke-dasharray="9 5"/>
+  <polygon points="356,610 356,618 364,614" fill="#6b21a8"/>
+  <text x="370" y="618" fill="#374151" font-size="9">OAuth 2.0 / JWT</text>
+
+  <!-- Green -->
+  <line x1="480" y1="614" x2="506" y2="614" stroke="#15803d" stroke-width="2.5" stroke-dasharray="9 5"/>
+  <polygon points="506,610 506,618 514,614" fill="#15803d"/>
+  <text x="520" y="618" fill="#374151" font-size="9">Timer trigger / HTTP scrape</text>
+
+  <!-- Orange -->
+  <line x1="680" y1="614" x2="706" y2="614" stroke="#c2410c" stroke-width="2.2" stroke-dasharray="9 5"/>
+  <polygon points="706,610 706,618 714,614" fill="#c2410c"/>
+  <text x="720" y="618" fill="#374151" font-size="9">Email notification to user</text>
+
+  <text x="1042" y="618" fill="#9ca3af" font-size="8.5" text-anchor="end">All arrows animated</text>
+
+</svg>

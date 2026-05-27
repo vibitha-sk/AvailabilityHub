@@ -1,0 +1,4 @@
+.list-state { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 1rem; }
+.list-state.empty span { font-size: 3rem; display: block; margin-bottom: 0.8rem; }
+.list-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }

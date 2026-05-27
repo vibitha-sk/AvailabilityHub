@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "COSMOS_ENDPOINT": "https://your-cosmos-account.documents.azure.com:443/",
+    "COSMOS_KEY": "your-cosmos-primary-key",
+    "COSMOS_DATABASE": "ProductTracker",
+    "COSMOS_CONTAINER": "Products",
+    "ACS_CONNECTION_STRING": "endpoint=https://your-acs.communication.azure.com/;accesskey=your-key",
+    "EMAIL_SENDER": "DoNotReply@your-acs-domain.azurecomm.net",
+    "AZURE_TENANT_ID": "your-tenant-id",
+    "AZURE_CLIENT_ID": "your-backend-client-id"
+  }
+}

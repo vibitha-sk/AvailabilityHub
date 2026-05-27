@@ -1,0 +1,16 @@
+.product-form {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+}
+.form-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; color: var(--azure-blue); }
+.form-error { background: #fde7e9; color: #a4262c; border-radius: var(--radius); padding: 0.6rem 1rem; margin-bottom: 1rem; font-size: 0.9rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-secondary); }
+.form-input { width: 100%; padding: 0.55rem 0.85rem; border: 1.5px solid var(--border); border-radius: var(--radius); font-size: 0.95rem; font-family: inherit; transition: border-color 0.15s; }
+.form-input:focus { outline: none; border-color: var(--azure-blue); }
+.btn-submit { margin-top: 0.5rem; background: var(--azure-blue); color: #fff; border: none; border-radius: var(--radius); padding: 0.6rem 1.5rem; font-size: 0.95rem; font-weight: 600; transition: background 0.15s; }
+.btn-submit:hover:not(:disabled) { background: var(--azure-blue-dark); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }

@@ -1,0 +1,24 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+.terraform.lock.*
+
+# Crash logs
+crash.log
+
+# Terraform directories
+.terraform/
+
+# Local override files
+# *.tfvars
+# *.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive files
+.env
+node_modules
+.vscode
+.cursor
