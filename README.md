@@ -113,3 +113,23 @@ To deploy the application to Azure, please follow the comprehensive step-by-step
 3. Configure Azure Entra ID (App Registration) for authentication.
 4. Deploy the backend to an Azure Function App (Python 3.11+, Consumption plan).
 5. Deploy the frontend React app to Azure Static Web Apps.
+
+## Application Flow & Screenshots
+1. **Frontend Landing Page**: The initial view of the Static Web App before logging in.
+   ![Landing Page](./images/SWALandingPage.png)
+2. **Authentication Setup**: Configuring the redirect URI in Azure Entra ID to enable MSAL authentication for the frontend.
+   ![Entra ID Authentication](./images/RedirectURIEntraID.png)
+3. **Application Dashboard**: Once authenticated, users can add and view their tracked products on the main dashboard.
+   ![Dashboard](./images/Dashboard.png)
+4. **Static Web App Deployment**: The deployed frontend resource in the Azure portal.
+   ![Static Web App](./images/SWA.png)
+5. **Cosmos DB Storage**: Tracked product data stored in the Azure Cosmos DB NoSQL container.
+   ![Cosmos DB](./images/CosmosDB.png)
+6. **Backend Processing**: The Azure Functions handling API requests and timer-based scraping tasks.
+   ![Backend Functions](./images/BackendFunctions.png)
+7. **Email Service Configuration**: Setting up Azure Communication Services to handle automated emails.
+   ![Communication Services](./images/CommunicationServiceSetup.png)
+8. **Notification Received**: The email alert sent to the user when a tracked product's desired size is available.
+   ![Product Notification](./images/ProductAvailabilityNotification.png)
+9. **System Monitoring**: Tracking the application's health and performance using Application Insights.
+   ![Monitoring](./images/Monitoring.png)
