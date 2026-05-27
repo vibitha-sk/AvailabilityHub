@@ -1,8 +1,10 @@
-# Product Availability Tracker
+## Product Availability Tracker
 
 A full-stack web application that allows users to log in, add public product URLs with desired sizes, and receive email notifications when products become available in their desired size.
 
 ## Architecture
+
+![arch](./architecture/Azure-Basic-Template-serverless.svg)
 
 - **Frontend**: React (Azure Static Web Apps)
 - **Backend**: Python (Azure Functions)
@@ -10,8 +12,6 @@ A full-stack web application that allows users to log in, add public product URL
 - **Authentication**: Azure Entra ID (MSAL)
 - **Email**: Azure Communication Services
 - **Scraping**: Azure Functions + BeautifulSoup (Timer Triggered)
-
-![arch](./architecture/Azure-Basic-Template-serverless.svg)
 
 ## Project Structure
 
