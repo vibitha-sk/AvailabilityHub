@@ -20,5 +20,5 @@ override.tf.json
 # Sensitive files
 .env
 node_modules
-.vscode
+
 .cursor

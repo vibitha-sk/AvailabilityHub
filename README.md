@@ -1,6 +1,6 @@
 ## Product Availability Tracker
 
-A full-stack web application that allows users to log in, add public product URLs with desired sizes, and receive email notifications when products become available in their desired size.
+A full-stack web application featuring secure authentication that allows users to add public product URLs with desired sizes, and receive email notifications when products become available in their desired size.
 
 ## Architecture
 
@@ -13,15 +13,6 @@ A full-stack web application that allows users to log in, add public product URL
 - **Email**: Azure Communication Services
 - **Scraping**: Azure Functions + BeautifulSoup (Timer Triggered)
 
-## Project Structure
-
-```
-product-availability-tracker/
-├── frontend/          # React SPA
-├── backend/           # Python Azure Functions (HTTP API and Timer trigger)
-├── docs/              # Step-by-step Azure Portal guide (Markdown)
-└── architecture/      # Architecture diagram (SVG)
-```
 
 ## API Reference
 
@@ -103,9 +94,6 @@ The backend exposes a CRUD API for managing tracked products. All endpoints requ
   }
   ```
 
-## Deployment Instructions
-
-To deploy the application to Azure, please follow the comprehensive step-by-step instructions detailed in the [Deployment Guide](./docs/azure-portal-guide.md).
 
 **Brief Overview of Deployment Steps**:
 1. Provision Azure Cosmos DB for NoSQL and set up the database and container.
