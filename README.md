@@ -117,9 +117,9 @@ The backend exposes a CRUD API for managing tracked products. All endpoints requ
   ```
 
 
-### 🪧Application Flow & Demonstartion
+### 🪧Application Flow & Demonstration
 **1.Frontend Landing Page:** The initial view of the Static Web App before logging in.
-   ![Landing Page]()
+   ![Landing Page](images/SWA_landing_page.png)
 **2.Authentication Setup:** Configuring the redirect URI in Azure Entra ID to enable MSAL authentication for the frontend.
    ![Entra ID Authentication](images/URI_Redirection.png)
 **3.Application Dashboard:** Once authenticated, users can add and view their tracked products on the main dashboard.
